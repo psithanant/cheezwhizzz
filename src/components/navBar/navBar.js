@@ -4,8 +4,10 @@ import NavItems from './navItem';
 import SearchBar from './searchBar'
 import NavbarHeader from './navBarHeader'
 
+const style = {background: "linear-gradient(to bottom, #fff200 0%,#ffc802 80%,#ffc802 95%)"}
+
 const NavbarClass =  () => (
-  <Navbar inverse collapseOnSelect>
+  <Navbar style={style} inverse collapseOnSelect>
     <NavbarHeader />
     <SearchBar />
     <Navbar.Collapse>
