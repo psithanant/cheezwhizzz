@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
+import { Grid, Col } from 'react-bootstrap';
 import logo from './logo.svg';
 import './App.css';
-import buttonGroupInstance from './components/filterButtonGroup'
+import Menu from './components/filterButtonGroup'
 import navbarInstance from './components/navBar'
+import ResultTable from './components/resultTable'
+
+
+const fakeCheeseData = [
+  {name: "brie", hardness: "soft", animal: "cow", favorite: 0, id: 1},
+];
 
 class App extends Component {
   render() {
@@ -11,16 +18,15 @@ class App extends Component {
         <div className="App-header">
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
           {navbarInstance}
-
-          <h2>Welcome to React</h2>
-          {buttonGroupInstance}
-
         </div>
-
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-
+        <Grid>
+          <Col md={6} >
+            <Menu />
+          </Col>
+          <Col md={6} >
+            <ResultTable cheeses={fakeCheeseData} />
+          </Col>
+        </Grid>
       </div>
     );
   }
