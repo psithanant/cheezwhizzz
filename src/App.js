@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import buttonGroupInstance from './components/filterButtonGroup'
+import navbarInstance from './components/navBar'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          {navbarInstance}
+
           <h2>Welcome to React</h2>
           {buttonGroupInstance}
 
