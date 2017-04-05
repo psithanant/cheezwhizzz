@@ -4,7 +4,7 @@ import NavItems from './navItem';
 import SearchBar from './searchBar'
 import NavbarHeader from './navBarHeader'
 
-const navbarInstance = (
+const NavbarClass =  () => (
   <Navbar inverse collapseOnSelect>
     <NavbarHeader />
     <SearchBar />
@@ -16,4 +16,4 @@ const navbarInstance = (
   </Navbar>
 );
 
-export default navbarInstance;
+export default NavbarClass;
