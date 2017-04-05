@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+
+import buttonGroupInstance from './components/filterButtonGroup'
+import NavbarClass from './components/navBar/navBar'
+
 import { Grid, Col } from 'react-bootstrap';
-import logo from './logo.svg';
+
 import './App.css';
 import Menu from './components/filterButtonGroup'
-import navbarInstance from './components/navBar'
+
 import ResultTable from './components/resultTable'
 
 
@@ -11,14 +15,18 @@ const fakeCheeseData = [
   {name: "brie", hardness: "soft", animal: "cow", favorite: 0, id: 1},
 ];
 
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          {navbarInstance}
-        </div>
+        <NavbarClass />
+
+        {/* <div className="App-header">
+        </div> */}
+        <main>
+          {buttonGroupInstance}
+        </main>
         <Grid>
           <Col md={6} >
             <Menu />
@@ -27,6 +35,7 @@ class App extends Component {
             <ResultTable cheeses={fakeCheeseData} />
           </Col>
         </Grid>
+
       </div>
     );
   }
