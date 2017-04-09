@@ -1,13 +1,8 @@
 import React from 'react';
 import { NavItem } from 'react-bootstrap';
 
-const NavItems = () => {
-  return (
-    <div>
-      <NavItem eventKey={1} href="#">Login</NavItem>
-      <NavItem eventKey={2} href="#">Register</NavItem>
-    </div>
-  )
-}
+const NavbarItem = (props) => (
+  <NavItem eventKey={1} href="#">{props.name}</NavItem>
+)
 
-export default NavItems;
+export default NavbarItem;
