@@ -7,5 +7,10 @@ import './index.css';
 
 ReactDOM.render(
   <App />,
+  // <buttonGroupInstance />,
   document.getElementById('root')
 );
+
+if (module.hot) {
+module.hot.accept()
+}

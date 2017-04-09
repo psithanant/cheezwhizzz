@@ -8,7 +8,6 @@ const style = {
 }
 const NavbarBrand = () => (
   <Navbar.Brand>
-    {/* <h3>CheezWhizzzz</h3> */}
     <a style={style}>Chez Fromage</a>
   </Navbar.Brand>
 )
