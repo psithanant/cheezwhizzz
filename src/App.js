@@ -12,13 +12,6 @@ import {
 import ResultTable from './components/homepage/resultTable'
 import { connect } from 'react-redux';
 
-
-const fakeCheeseData = [
-  {name: "brie", hardness: "soft", animal: "cow", favorite: 0, id: 1},
-];
-// const About = () => {
-//   return <div>About HackerNews!</div>
-// }
 class FindStore extends Component {
   render() {
     return (
@@ -28,7 +21,8 @@ class FindStore extends Component {
     );
   }
 }
-
+// home ------------------------------------------------------------------------------------------------
+// PLEASE DO NOT MOVE THE ORDER IN HERE (HOME) AND IN APP AS THEY NEED TO BE IN THIS ORDER TO WORK (HOISTING)
 class Home extends Component {
   render() {
     return (
@@ -44,7 +38,7 @@ class Home extends Component {
             <Menu />
           </Col>
           <Col md={6} >
-            <ResultTable cheeses={fakeCheeseData} />
+            <ResultTable cheeses={this.props.results} />
           </Col>
         </Grid>
 
@@ -53,6 +47,21 @@ class Home extends Component {
   }
 }
 
+const mapStateToPropsHome = (state, ownProps) => {
+  return {
+
+  }
+}
+
+const mapDispatchToPropsHome = (dispatch, ownProps) => {
+  return {
+
+  };
+}
+const ConnectedHome = connect(mapStateToPropsHome, mapDispatchToPropsHome)(Home);
+// home ------------------------------------------------------------------------------------------------
+
+// App -------------------------------------------------------------------------------------------------
 class App extends Component {
   render() {
     return (
@@ -64,14 +73,13 @@ class App extends Component {
           <li><Link to="/about">About</Link></li>
         </ul>
 
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/" component={ConnectedHome}/>
       <Route path="/about" component={FindStore}/>
       </div>
       </Router>
     );
   }
 }
-
 const mapStateToProps = (state, ownProps) => {
   return {
 
@@ -83,6 +91,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   };
 }
-
 const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
-export { ConnectedApp };
+// App -------------------------------------------------------------------------------------------------
+
+export { ConnectedApp, ConnectedHome };
