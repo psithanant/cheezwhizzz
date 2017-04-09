@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
-import buttonGroupInstance from './components/filterButtonGroup'
+// import buttonGroupInstance from './components/filterButtonGroup'
 
 
 ReactDOM.render(
@@ -10,3 +10,7 @@ ReactDOM.render(
   // <buttonGroupInstance />,
   document.getElementById('root')
 );
+
+if (module.hot) {
+module.hot.accept()
+}
