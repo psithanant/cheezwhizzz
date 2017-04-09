@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
+import buttonGroupInstance from './components/homepage/filterButtonGroup'
+import NavbarClass from './components/navBar/navBar'
+import { Grid, Col } from 'react-bootstrap';
+import Menu from './components/homepage/filterButtonGroup'
 import './App.css';
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
-
-import buttonGroupInstance from './components/filterButtonGroup'
-import { Grid, Col } from 'react-bootstrap';
-import Menu from './components/filterButtonGroup'
-import NavbarClass from './components/navBar/navBar'
-import ResultTable from './components/resultTable'
+import ResultTable from './components/homepage/resultTable'
+import { connect } from 'react-redux';
 
 
 const fakeCheeseData = [
@@ -19,7 +19,6 @@ const fakeCheeseData = [
 // const About = () => {
 //   return <div>About HackerNews!</div>
 // }
-
 class FindStore extends Component {
   render() {
     return (
@@ -55,7 +54,6 @@ class Home extends Component {
 }
 
 class App extends Component {
-  ////////// Render
   render() {
     return (
       <Router>
@@ -74,5 +72,17 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = (state, ownProps) => {
+  return {
 
-export default App;
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+
+  };
+}
+
+const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
+export { ConnectedApp };

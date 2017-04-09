@@ -38,5 +38,4 @@ class ResultTable extends React.Component {
     }
 }
 
-
 export default ResultTable;
