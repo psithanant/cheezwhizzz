@@ -22,7 +22,6 @@ class FindStore extends Component {
   }
 }
 // home ------------------------------------------------------------------------------------------------
-// PLEASE DO NOT MOVE THE ORDER IN HERE (HOME) AND IN APP AS THEY NEED TO BE IN THIS ORDER TO WORK (HOISTING)
 class Home extends Component {
   render() {
     return (
@@ -35,7 +34,7 @@ class Home extends Component {
         </main>
         <Grid>
           <Col md={6} >
-            <Menu />
+            <Menu seeAllCheeses={this.props.seeAllCheeses} />
           </Col>
           <Col md={6} >
             <ResultTable cheeses={this.props.results} />
@@ -49,15 +48,21 @@ class Home extends Component {
 
 const mapStateToPropsHome = (state, ownProps) => {
   return {
-
+    results: state.results,
   }
 }
 
 const mapDispatchToPropsHome = (dispatch, ownProps) => {
   return {
-
+    seeAllCheeses: () => {
+      dispatch({type: 'SEE_ALL_CHEESES',
+                payload: fetch('http://cheeswhiz.herokuapp.com/api/cheese')
+                           .then(function(res) { return res.json(); })
+               })
+    }
   };
 }
+
 const ConnectedHome = connect(mapStateToPropsHome, mapDispatchToPropsHome)(Home);
 // home ------------------------------------------------------------------------------------------------
 
