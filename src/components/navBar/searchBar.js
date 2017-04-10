@@ -1,12 +1,23 @@
 import React, {Component} from 'react';
-import { Navbar, FormGroup, FormControl } from 'react-bootstrap';
+import { Navbar, FormGroup, FormControl, Button } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
+import { setNavQuery, setCheeseResult } from '../../actions'
+
+
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    value: state.navQuery
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return bindActionCreators({setNavQuery, setCheeseResult}, dispatch)
+}
 
 class SearchBar extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = { term: '' };
-  }
   render() {
     return (
       <Navbar.Form pullLeft className="search-bar">
@@ -14,19 +25,21 @@ class SearchBar extends Component {
         <FormControl
           type="text"
           placeholder="Enter Cheese Name"
-          value={this.state.term}
-          onChange={(event) => this.onInputChange(event.target.value)} />
+          // value={}
+          onChange={(event) => {
+        this.props.setNavQuery(event.target.value);
+      }}
+           />
+         <Button onClick={(event) => {
+           event.preventDefault();
+           this.props.setCheeseResult(this.props.value)}} >Submit</Button>
         </FormGroup>
       </Navbar.Form>
   )
   }
-
-  onInputChange(term) {
-    this.setState({term});
-    // this.props.onSearchTermChange(term);
-    }
-
 }
+// onChange={(event) => setQuery }
+// onSubmit={(event) => }
 
-
-export default SearchBar;
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar)
+// export default SearchBar;
