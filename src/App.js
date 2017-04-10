@@ -34,7 +34,7 @@ class Home extends Component {
         </main>
         <Grid>
           <Col md={6} >
-            <Menu seeAllCheeses={this.props.seeAllCheeses} getRandomCheese={this.props.getRandomCheese} />
+            <Menu seeAllCheeses={this.props.seeAllCheeses} getRandomCheese={this.props.getRandomCheese} seeSubstitutes={this.props.seeSubstitutes} />
           </Col>
           <Col md={6} >
             <ResultTable cheeses={this.props.results} />
@@ -49,6 +49,7 @@ class Home extends Component {
 const mapStateToPropsHome = (state, ownProps) => {
   return {
     results: state.results,
+    query: state.query
   }
 }
 
@@ -63,6 +64,17 @@ const mapDispatchToPropsHome = (dispatch, ownProps) => {
     getRandomCheese: () => {
       dispatch({type: 'GET_RANDOM_CHEESE',
                 payload: fetch('http://cheeswhiz.herokuapp.com/api/cheese/random/5/hard')
+                           .then(function(res) { return res.json(); })
+              })
+    },
+    onSearchChange: (event) => {
+      dispatch({type: 'CHANGE_QUERY',
+                newQuery: event.target.value
+              })
+    },
+    seeSubstitutes: () => {
+      dispatch({type: 'SEE_SUBSTITUTES',
+                payload: fetch('http://cheeswhiz.herokuapp.com/api/cheese/substitute/Brie')
                            .then(function(res) { return res.json(); })
               })
     }

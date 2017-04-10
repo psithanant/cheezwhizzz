@@ -28,9 +28,9 @@ class Menu extends Component {
           </DropdownButton>
           <DropdownButton title="Search for Substitute" id="bg-vertical-dropdown-1">
             <MenuItem eventKey="2">
-              <input type="text" onClick={(event) => {
-                event.stopPropagation();
-              }} />
+              <input type="text"  onSubmit={this.props.seeSubstitutes}
+                                  onClick={(event) => {event.stopPropagation();  }}
+              />
             </MenuItem>
           </DropdownButton>
         </DropdownButton>
