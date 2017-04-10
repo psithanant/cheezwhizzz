@@ -34,7 +34,7 @@ class Home extends Component {
         </main>
         <Grid>
           <Col md={6} >
-            <Menu seeAllCheeses={this.props.seeAllCheeses} />
+            <Menu seeAllCheeses={this.props.seeAllCheeses} getRandomCheese={this.props.getRandomCheese} />
           </Col>
           <Col md={6} >
             <ResultTable cheeses={this.props.results} />
@@ -59,8 +59,14 @@ const mapDispatchToPropsHome = (dispatch, ownProps) => {
                 payload: fetch('http://cheeswhiz.herokuapp.com/api/cheese')
                            .then(function(res) { return res.json(); })
                })
+    },
+    getRandomCheese: () => {
+      dispatch({type: 'GET_RANDOM_CHEESE',
+                payload: fetch('http://cheeswhiz.herokuapp.com/api/cheese/random/5/hard')
+                           .then(function(res) { return res.json(); })
+              })
     }
-  };
+  }
 }
 
 const ConnectedHome = connect(mapStateToPropsHome, mapDispatchToPropsHome)(Home);

@@ -11,7 +11,7 @@ class ResultTable extends React.Component {
                         {cheese.name}
                     </td>
                     <td>
-                        {cheese.hardness}
+                        {cheese.firmness}
                     </td>
                     <td>
                         {cheese.animal}
