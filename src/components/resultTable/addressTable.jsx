@@ -14,7 +14,8 @@ const mapStateToProps = (state, ownProps ) =>{
 //   return bindActionCreators({ }, dispatch)
 // }
 
-const _renderList = (list) => {return (
+const _renderList = (list) => {
+  return (
   // {console.log('what is state', state)};
    list.map(item => (
       <tr key={cheese.id}>
@@ -32,18 +33,10 @@ const _renderList = (list) => {return (
         </td>
       </tr>
     ))
-);
+  );
 }
 
 class Table extends Component {
-  // console.log('what is table list', list);
-  // console.log('what is searched', page);
-  // if(list.length === 0 && searched === true){
-  //   return <div>No results</div>
-  // }
-  // else if(list.length >=0 && searched === true){
-  //   return <div>Loading...</div>
-  // }
   render(){
     {console.log('what is lissttttt',this.props.list);}
   return (

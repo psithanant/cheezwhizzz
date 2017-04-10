@@ -3,4 +3,3 @@ export default{
     query:'',
     page:0
   }
-}
