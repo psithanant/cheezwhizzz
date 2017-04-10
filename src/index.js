@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedApp } from './App';
-import { rootReducer } from './reducers/rootReducer';
+import  rootReducer from './reducers/rootReducer';
 import './index.css';
 import { createStore, applyMiddleware } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
