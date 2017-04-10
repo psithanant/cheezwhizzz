@@ -7,7 +7,7 @@ const INITIAL_STATE = [
 // }
 
 const cheeseResultReducer = (state = INITIAL_STATE, action) => {
-  console.log(action)
+
   switch (action.type) {
     case 'SEE_ALL_CHEESES_FULFILLED':
       return action.payload;

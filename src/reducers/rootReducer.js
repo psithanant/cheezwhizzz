@@ -1,8 +1,16 @@
 import { combineReducers } from 'redux'
 import distance_reducer from './cheeseResultReducer'
 
+import results from './cheeseResultReducer'
+import navQuery from './reducer_navSearchQuery'
+import navResult from './reducer_navSearchResults'
+
 const rootReducer = combineReducers({
-  distance_reducer:distance_reducer
+  distance_reducer:distance_reducer,
+  results,
+  navQuery,
+  navResult
+
 })
 
 
