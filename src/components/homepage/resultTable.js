@@ -1,4 +1,12 @@
 import React from 'react';
+// const mapStateToProps = (state, ownProps ) =>{
+//   console.log('what is list', state);
+//     return {
+//       list: state.result
+//       // page: state.search.page
+//     }
+// };
+// export default connect(mapStateToProps)(ResultTable);
 
 class ResultTable extends React.Component {
 

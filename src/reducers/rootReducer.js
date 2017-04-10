@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import results from './cheeseResultReducer'
+import distance_reducer from './cheeseResultReducer'
 
 const rootReducer = combineReducers({
-  results
+  distance_reducer:distance_reducer
 })
 
 

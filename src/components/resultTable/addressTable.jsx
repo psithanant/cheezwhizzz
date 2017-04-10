@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+// import {Table } from 'react-bootstrap';
 // import './Table.css';
 
 const mapStateToProps = (state, ownProps ) =>{
   console.log('what is list', state);
     return {
-      list: state.result
+      list: state.distance_reducer
       // page: state.search.page
     }
 };
@@ -18,27 +19,31 @@ const _renderList = (list) => {
   return (
   // {console.log('what is state', state)};
    list.map(item => (
-      <tr key={cheese.id}>
+      <tr key={item.id}>
         <td>
-          {item.Address}
+          {item.name}
         </td>
         <td>
-          {item.author}
+          {item.location.display_address}
         </td>
         <td>
-          {item.num_comments}
+          {item.geo_accuracy}
         </td>
         <td>
-          {item.points}
+          {item.phone}
+        </td>
+        <td>
+          {item.rating}
         </td>
       </tr>
     ))
   );
 }
 
-class Table extends Component {
+class DistanceTable extends Component {
+
   render(){
-    {console.log('what is lissttttt',this.props.list);}
+    console.log('what is lissttttt',this.props.list);
   return (
     <table className="table">
       <thead>
@@ -59,4 +64,4 @@ class Table extends Component {
   }
 };
 
-export default connect(mapStateToProps)(Table);
+export default connect(mapStateToProps)(DistanceTable);

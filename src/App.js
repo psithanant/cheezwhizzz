@@ -11,12 +11,18 @@ import {
 } from 'react-router-dom'
 import ResultTable from './components/homepage/resultTable'
 import { connect } from 'react-redux';
+import doSearch from './actions/index.js'
+import DistanceTable from './components/resultTable/addressTable.jsx'
 
-class FindStore extends Component {
+class KevinsPage extends Component {
   render() {
     return (
-      <div className="FindStore">
+      <div className="KevinsPage">
         <p>hiiii</p>
+      {/* <Search> Search</Search> */}
+      <button onClick = {doSearch(94588, 3)}
+        type ="button"> Click here </button>
+        <DistanceTable />
       </div>
     );
   }
@@ -81,11 +87,11 @@ class App extends Component {
       <NavbarClass />
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
+          <li><Link to="/secondPage">kevins page</Link></li>
         </ul>
 
         <Route exact path="/" component={ConnectedHome}/>
-      <Route path="/about" component={FindStore}/>
+        <Route path="/secondPage/" component={KevinsPage}/>
       </div>
       </Router>
     );

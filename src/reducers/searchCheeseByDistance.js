@@ -1,9 +1,10 @@
 //query reducer.
 import initialState from './initialState';
 
-const page_reducer = (state = 0, action) => {
+const distance_reducer = (state = [], action) => {
   switch (action.type) {
-    case 'MORE_FULFILLED':
+    console.log('what is action', action);
+    case 'DO_SEARCH_FULFILLED':
     // console.log('what is action?', action);
     // console.log('what is state2',{...state, query: action.text} );
       return action.payload;
@@ -12,4 +13,4 @@ const page_reducer = (state = 0, action) => {
   }
 }
 
-export default page_reducer
+export default distance_reducer
