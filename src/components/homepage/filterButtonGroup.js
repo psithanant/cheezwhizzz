@@ -2,14 +2,10 @@ import React, { Component } from 'react';
 import { ButtonGroup, Button, MenuItem, DropdownButton } from 'react-bootstrap';
 
 class Menu extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
         <ButtonGroup vertical bsSize="large">
-        <Button>See All Cheeses</Button>
+        <Button onClick={this.props.seeAllCheeses}>See All Cheeses</Button>
         <DropdownButton  bsSize="large" title="Search for Cheese" id="bg-vertical-dropdown-1">
           <DropdownButton title="Search By Firmness" id="bg-vertical-dropdown-1">
               <MenuItem eventKey="1">hard</MenuItem>
@@ -40,7 +36,7 @@ class Menu extends Component {
         </DropdownButton>
 
         <Button>Find Cheese Shop</Button>
-        <Button>Surprise Me!</Button>
+        <Button onClick={this.props.getRandomCheese}>Surprise Me!</Button>
         <Button>My favorites</Button>
       </ButtonGroup>
      )

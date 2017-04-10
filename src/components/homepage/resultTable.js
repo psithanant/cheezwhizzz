@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 class ResultTable extends React.Component {
 
     render() {
+        console.log(this.props)
         let rows = [];
         this.props.cheeses.forEach(function(cheese) {
             rows.push(
@@ -11,7 +12,7 @@ class ResultTable extends React.Component {
                         {cheese.name}
                     </td>
                     <td>
-                        {cheese.hardness}
+                        {cheese.firmness}
                     </td>
                     <td>
                         {cheese.animal}
