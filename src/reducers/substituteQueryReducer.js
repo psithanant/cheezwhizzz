@@ -1,10 +1,10 @@
-const queryReducer = (state = '', action) => {
+const substituteQueryReducer = (state = '', action) => {
   switch (action.type) {
-    case 'SEE_SUBSTITUTES_FULFILLED':
-      return action.payload;
+    case 'SET_SUBSTITUTE_QUERY':
+      return action.text;
     default:
       return state;
   }
 }
 
-export default queryReducer
+export default substituteQueryReducer

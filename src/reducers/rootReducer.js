@@ -1,8 +1,14 @@
 import { combineReducers } from 'redux'
 import results from './cheeseResultReducer'
+import navQuery from './reducer_navSearchQuery'
+import navResult from './reducer_navSearchResults'
+import substituteQuery from './substituteQueryReducer'
 
 const rootReducer = combineReducers({
-  results
+  results,
+  navQuery,
+  navResult,
+  substituteQuery,
 })
 
 
