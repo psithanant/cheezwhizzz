@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import buttonGroupInstance from './filterButtonGroup'
 import { Grid, Col } from 'react-bootstrap';
 import Menu from './filterButtonGroup'
 import ResultTable from './resultTable'
@@ -9,21 +8,16 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-
-        {/* <div className="App-header">
-        </div> */}
-        <main>
-          {buttonGroupInstance}
-        </main>
         <Grid>
           <Col md={6} >
-            <Menu seeAllCheeses={this.props.seeAllCheeses} getRandomCheese={this.props.getRandomCheese} seeSubstitutes={this.props.seeSubstitutes} />
+            <Menu seeAllCheeses={this.props.seeAllCheeses}
+                  getRandomCheese={this.props.getRandomCheese}
+                  seeSubstitutes={this.props.seeSubstitutes} />
           </Col>
           <Col md={6} >
             <ResultTable cheeses={this.props.results} />
           </Col>
         </Grid>
-
       </div>
     );
   }
