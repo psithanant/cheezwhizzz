@@ -1,27 +1,23 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Grid, Col } from 'react-bootstrap';
 import Menu from './filterButtonGroup'
 import ResultTable from './resultTable'
 import { connect } from 'react-redux';
 
-class Home extends Component {
-  render() {
-    return (
-      <div className="Home">
-        <Grid>
-          <Col md={6} >
-            <Menu seeAllCheeses={this.props.seeAllCheeses}
-                  getRandomCheese={this.props.getRandomCheese}
-                  seeSubstitutes={this.props.seeSubstitutes} />
-          </Col>
-          <Col md={6} >
-            <ResultTable cheeses={this.props.results} />
-          </Col>
-        </Grid>
-      </div>
-    );
-  }
-}
+const Home = ({seeAllCheeses, getRandomCheese, seeSubstitutes, results}) => (
+  <div className="Home">
+    <Grid>
+      <Col md={6} >
+        <Menu seeAllCheeses={seeAllCheeses}
+              getRandomCheese={getRandomCheese}
+              seeSubstitutes={seeSubstitutes} />
+      </Col>
+      <Col md={6} >
+        <ResultTable cheeses={results} />
+      </Col>
+    </Grid>
+  </div>
+);
 
 const mapStateToPropsHome = (state, ownProps) => {
   return {
