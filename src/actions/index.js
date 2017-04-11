@@ -3,20 +3,25 @@
 import axios from 'axios';
 // import * as CONST from '../constants';
 
-function fetchSearchTopStories(zipCode, mileage) {
-
+function fetchSearchTopStories() {
+console.log('i am in fetch function');
     return axios.get("http://cheeswhiz.herokuapp.com/api/findcheese/94588/3")
     .then(response => {
-        console.log(  "what is response now", response  );
-        return response
+        console.log(  "what is response now", response.data );
+        return response.data
     })
+    //
+    // return fetch("http://cheeswhiz.herokuapp.com/api/findcheese/94588/3")
+    // .then(response => response.json())
+    // .then(result => console.log(result) )
+    // .catch(err => console.log('oh nooo!'))
 };
 
 export const doSearch = (text, page) => {
     // console.log('can prop get here', this.props);
     return {
         type: 'DO_SEARCH',
-        payload: fetchSearchTopStories(94588 , 3)
+        payload: fetchSearchTopStories()
     }
 }
 

@@ -13,16 +13,41 @@ import ResultTable from './components/homepage/resultTable'
 import { connect } from 'react-redux';
 import doSearch from './actions/index.js'
 import DistanceTable from './components/resultTable/addressTable.jsx'
-
+import DistanceDropDown from './components/dropdown/Distance.js'
+import RatingDropDown from './components/dropdown/YelpRating.js'
+import SubmitDistanceRating from './components/dropdown/SubmitButton.js'
+import ZipCode from './components/SearchZipCode/ZipCode.js'
 class KevinsPage extends Component {
   render() {
     return (
       <div className="KevinsPage">
-        <p>hiiii</p>
-      {/* <Search> Search</Search> */}
-      <button onClick = {doSearch(94588, 3)}
-        type ="button"> Click here </button>
-        <DistanceTable />
+       {/* <Search> Search</Search> */}
+      {/* <button onClick={(event)=>{ doSearch(94588, 3) }}
+        type="button"> Click here </button> */}
+        <Grid>
+
+          <Col md={6} >
+            <DistanceDropDown />
+          </Col>
+
+          <Col md={6} >
+            <ZipCode />
+          </Col>
+
+          <Col md={6} >
+            <RatingDropDown />
+          </Col>
+
+          <Col md={6} >
+            <DistanceTable />
+          </Col>
+
+          <Col md={6} >
+            <SubmitDistanceRating />
+          </Col>
+
+        </Grid>
+
       </div>
     );
   }

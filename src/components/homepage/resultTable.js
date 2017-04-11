@@ -35,7 +35,7 @@ class ResultTable extends React.Component {
             <table className='table-striped table-bordered table'>
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th> Name </th>
                         <th>Firmness</th>
                         <th>Animal</th>
                         <th>Favorite</th>
