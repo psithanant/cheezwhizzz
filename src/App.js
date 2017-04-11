@@ -7,6 +7,10 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+
+import ResultTable from './components/homepage/resultTable'
+import NavTable from './components/navBar/navBarResultstable'
+
 import { connect } from 'react-redux';
 import doSearch from './actions/index.js'
 import DistanceTable from './components/resultTable/addressTable.jsx'
@@ -20,61 +24,49 @@ class KevinsPage extends Component {
 
   render() {
     return (
+
       <div className="KevinsPage">
        {/* <Search> Search</Search> */}
       {/* <button onClick={(event)=>{ doSearch(94588, 3) }}
         type="button"> Click here </button> */}
-        {/* <Grid>
-
-          <Col md={6} >
-            <DistanceDropDown />
-          </Col>
-
-          <Col md={6} >
-            <ZipCode />
-          </Col>
-
-          <Col md={6} >
-            <RatingDropDown />
-          </Col>
-
-          <Col md={6} >
-            <DistanceTable />
-          </Col>
-
-          <Col md={6} >
-            <SubmitDistanceRating />
-          </Col>
-
-        </Grid> */}
 
       </div>
+
+
+
     );
   }
 }
+
 
 class Register extends Component {
   render() {
     return (
       <div className="register page">
         <RegisterForm />
+
       </div>
     );
   }
 }
 
-// App -------------------------------------------------------------------------------------------------
+
+
 class App extends Component {
   render() {
     return (
       <Router>
       <div className="page">
       <NavbarClass />
+
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/secondPage">kevins page</Link></li>
+
           <li><Link to="/register">Register</Link></li>
+
         </ul>
+
 
         <Route exact path="/" component={ConnectedHome}/>
         <Route path="/secondPage/" component={KevinsPage}/>
@@ -96,6 +88,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 }
 const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
-// App -------------------------------------------------------------------------------------------------
+
 
 export { ConnectedApp, ConnectedHome };

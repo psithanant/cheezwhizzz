@@ -7,7 +7,7 @@ class RegisterForm extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(this.props)}>
         <div>
           <label htmlFor="email">Email</label>
         <Field name="email" component="input" type="email" />
@@ -17,6 +17,7 @@ class RegisterForm extends Component {
         <Field name="password" component="input" type="text" />
         </div>
         <button type="submit">Submit</button>
+
       {/* <RegisterButton/> */}
       </form>
     )
