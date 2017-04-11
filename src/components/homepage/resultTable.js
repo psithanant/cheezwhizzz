@@ -1,5 +1,4 @@
 import React from 'react';
-
 const ResultTable = ({cheeses}) => (
     <table className='table-striped table-bordered table'>
         <thead>
@@ -22,5 +21,4 @@ const ResultTable = ({cheeses}) => (
         </tbody>
     </table>
 )
-
 export default ResultTable;
