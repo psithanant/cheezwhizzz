@@ -10,7 +10,7 @@ import promiseMiddleware from 'redux-promise-middleware';
 // import buttonGroupInstance from './components/filterButtonGroup'
 
 const composeStoreWithMiddleware = applyMiddleware( promiseMiddleware())(createStore);
-const store = composeStoreWithMiddleware(rootReducer);
+const store = composeStoreWithMiddleware(rootReducer,   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
   <Provider store={store}>

@@ -57,21 +57,7 @@ class NavTable extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                  {console.log("this is props", this.props.list)}
-                  {this.props.list.map(cheese => (
-                    <tr key={cheese.id}>
-                        <td>
-                            {cheese.name}
-                        </td>
-                        <td>
-                            {cheese.firmness}
-                        </td>
-                        <td>
-                            {cheese.animal}
-                        </td>
-                    </tr>
-                  )
-                  )}
+                  {rows}
                 </tbody>
             </table>
         )
