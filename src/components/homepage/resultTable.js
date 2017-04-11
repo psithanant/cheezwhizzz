@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class ResultTable extends React.Component {
+
+class ResultTable extends Component {
 
     render() {
-        console.log(this.props)
         let rows = [];
         this.props.cheeses.forEach(function(cheese) {
             rows.push(

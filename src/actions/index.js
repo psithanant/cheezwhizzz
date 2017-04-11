@@ -19,10 +19,22 @@ function fetchCheeseByName(cheeseName) {
   .then(result => console.log(result) )
   .catch(err => console.log('oh nooo!'))
 }
-//
-// export const doSearch = (text, page) => {
-//   return {
-//     type: "DO_SEARCH",
-//     payload:
-//   }
-// }
+
+export const setSubstituteQuery = (text) => {
+  return {
+    type: 'SET_SUBSTITUTE_QUERY',
+    text
+  }
+}
+
+export const seeSubstitutes = (cheeseName) => {
+  return {
+    type: 'SEE_SUBSTITUTES',
+    payload: fetchSubstitutes(cheeseName)
+  }
+}
+
+function fetchSubstitutes(cheeseName) {
+  return fetch(`http://cheeswhiz.herokuapp.com/api/cheese/substitute/${cheeseName}`)
+    .then(res => res.json())
+}
