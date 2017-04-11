@@ -1,7 +1,10 @@
-const navResult = (state = [], action) => {
+const INITIAL_STATE = [{}]
+
+const navResult = (state = INITIAL_STATE, action) => {
+  console.log(action);
   switch (action.type) {
-    case 'SET_NAV_RESULT':
-      return action.payload
+    case 'SET_NAV_RESULT_FULFILLED':
+      return action.payload.data
     default:
       return state
   }

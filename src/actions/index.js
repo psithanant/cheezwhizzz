@@ -1,3 +1,4 @@
+
 //put action creators here.
 //and example might be:
 import axios from 'axios';
@@ -46,6 +47,7 @@ export const doSearch = (text, page) => {
 //   setQuery: setQuery,
 //   doSearch: doSearch
 
+
 export const setNavQuery = (text) => {
   return {
     type: 'SET_NAV_QUERY',
@@ -61,11 +63,12 @@ export const setCheeseResult = (cheeseName) => {
 }
 
 function fetchCheeseByName(cheeseName) {
-  console.log('i am here');
-  fetch(`http://cheeswhiz.herokuapp.com/api/cheese/specific/${cheeseName}`)
-  .then(response => response.json())
-  .then(result => console.log(result) )
-  .catch(err => console.log('oh nooo!'))
+  // console.log('i am here');
+  // fetch(`http://cheeswhiz.herokuapp.com/api/cheese/specific/${cheeseName}`)
+  //   .then(function(res) { return res.json(); })
+  // .then(result => {console.log('this is res', result)} )
+  // .catch(err => console.log('oh nooo!'))
+  return axios.get(`http://cheeswhiz.herokuapp.com/api/cheese/specific/${cheeseName}`)
 }
 //
 // export const doSearch = (text, page) => {
