@@ -1,5 +1,5 @@
 const INITIAL_STATE = [
-  { name: "brie", firmness: "soft", animal: "cow", favorite: 0, id: 1 },
+  { name: "brie", firmness: "soft", animal: "cow", favorite: 0, id: 1 }
 ];
 
 const cheeseResultReducer = (state = INITIAL_STATE, action) => {
