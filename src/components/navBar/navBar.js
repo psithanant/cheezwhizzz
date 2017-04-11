@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Button } from 'react-bootstrap';
 import NavbarItem from './navItem';
 import SearchBar from './searchBar'
 import NavbarHeader from './navBarHeader'
+import RegisterButtons from '../registration_login/signUp'
+import RegisterForm from '../registration_login/signUpForm'
 
 const style = {background: "linear-gradient(to bottom, #fff200 0%,#ffc802 80%,#ffc802 95%)"}
 
@@ -14,8 +16,10 @@ class NavbarClass extends Component {
         <SearchBar />
         <Navbar.Collapse>
           <Nav pullRight>
-            <NavbarItem name="Login" />
-            <NavbarItem name="Register" />
+            {/* <NavbarItem name="Login" />
+            <NavbarItem name="Register" /> */}
+            <RegisterButtons/>
+          {/* <RegisterForm /> */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -5,6 +5,7 @@ import results from './cheeseResultReducer'
 import navQuery from './reducer_navSearchQuery'
 import navResult from './reducer_navSearchResults'
 import substituteQuery from './substituteQueryReducer'
+import {reducer as formReducer } from 'redux-form'
 
 const rootReducer = combineReducers({
   distance_reducer,
@@ -12,6 +13,8 @@ const rootReducer = combineReducers({
   navQuery,
   navResult,
   substituteQuery,
+  form: formReducer
+
 })
 
 
