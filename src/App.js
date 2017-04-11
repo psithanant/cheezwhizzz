@@ -1,15 +1,11 @@
 import React, {Component} from 'react';
-import buttonGroupInstance from './components/homepage/filterButtonGroup'
 import NavbarClass from './components/navBar/navBar'
-import { Grid, Col } from 'react-bootstrap';
-import Menu from './components/homepage/filterButtonGroup'
 import './App.css';
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
-import ResultTable from './components/homepage/resultTable'
 import { connect } from 'react-redux';
 import ConnectedHome from './components/homepage/home'
 
