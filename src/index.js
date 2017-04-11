@@ -12,6 +12,12 @@ import promiseMiddleware from 'redux-promise-middleware';
 const composeStoreWithMiddleware = applyMiddleware( promiseMiddleware())(createStore);
 const store = composeStoreWithMiddleware(rootReducer);
 
+// const store = createStore(
+//   rootReducer,
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+//   applyMiddleware(promiseMiddleware())
+// );
+
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedApp />

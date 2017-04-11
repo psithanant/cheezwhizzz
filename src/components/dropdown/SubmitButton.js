@@ -7,9 +7,9 @@ class SubmitDistanceRating extends Component {
     return(
       <Thumbnail src={photo}>
         <h3>Cheese</h3>
-        <p>Description</p>
+        <p>Do you like cheese?</p>
         <p>
-          <Button bsStyle="primary">Button</Button>
+          <Button bsStyle="primary">Hit me to search</Button>
         </p>
       </Thumbnail>
   )
