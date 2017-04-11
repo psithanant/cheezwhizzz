@@ -1,4 +1,4 @@
-const navResult = (state = [], action) => {
+const navResult = (state = [{}], action) => {
   switch (action.type) {
     case 'SET_NAV_RESULT':
       return action.payload

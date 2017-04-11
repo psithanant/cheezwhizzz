@@ -13,10 +13,10 @@ export const setCheeseResult = (cheeseName) => {
 }
 
 function fetchCheeseByName(cheeseName) {
-  console.log('i am here');
+  // console.log('i am here');
   fetch(`http://cheeswhiz.herokuapp.com/api/cheese/specific/${cheeseName}`)
-  .then(response => response.json())
-  .then(result => console.log(result) )
+    .then(function(res) { return res.json(); })
+  .then(result => {console.log('this is res', result)} )
   .catch(err => console.log('oh nooo!'))
 }
 //

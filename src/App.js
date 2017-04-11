@@ -10,6 +10,7 @@ import {
   Link
 } from 'react-router-dom'
 import ResultTable from './components/homepage/resultTable'
+import NavTable from './components/navBar/navBarResultstable'
 import { connect } from 'react-redux';
 
 class FindStore extends Component {
@@ -17,6 +18,16 @@ class FindStore extends Component {
     return (
       <div className="FindStore">
         <p>hiiii</p>
+      </div>
+    );
+  }
+}
+
+class CheeseNameView extends Component {
+  render() {
+    return (
+      <div className="CheeseNameView">
+        {/* <NavTable /> */}
       </div>
     );
   }
@@ -37,6 +48,7 @@ class Home extends Component {
             <Menu seeAllCheeses={this.props.seeAllCheeses} getRandomCheese={this.props.getRandomCheese} />
           </Col>
           <Col md={6} >
+            <NavTable />
             <ResultTable cheeses={this.props.results} />
           </Col>
         </Grid>
@@ -79,12 +91,15 @@ class App extends Component {
       <Router>
       <div className="page">
       <NavbarClass />
+
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
+        <li><Link to="/specific">About</Link></li>
         </ul>
 
         <Route exact path="/" component={ConnectedHome}/>
+      <Route exact path="/specific" component={CheeseNameView}/>
       <Route path="/about" component={FindStore}/>
       </div>
       </Router>
