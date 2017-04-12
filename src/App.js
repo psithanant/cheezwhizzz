@@ -18,32 +18,42 @@ import RatingDropDown from './components/dropdown/YelpRating.js'
 import SubmitDistanceRating from './components/dropdown/SubmitButton.js'
 import ZipCode from './components/SearchZipCode/ZipCode.js'
 import ConnectedHome from './components/homepage/home'
-class KevinsPage extends Component {
+import { Grid, Col } from 'react-bootstrap';
 
+class CheeseDistance extends Component {
 
   render() {
     return (
+      <div className="CheeseName">
 
-      <div className="KevinsPage">
-       {/* <Search> Search</Search> */}
-      {/* <button onClick={(event)=>{ doSearch(94588, 3) }}
-        type="button"> Click here </button> */}
-  </div>
-    );
-  }
-}
+        <Grid>
 
-class CheeseNameView extends Component {
-  render() {
-    return (
-      <div className="CheeseNameView">
-        {/* <NavTable /> */}
+          <Col md={6} >
+            <DistanceDropDown />
+          </Col>
+
+          <Col md={6} >
+            <ZipCode />
+          </Col>
+
+          <Col md={6} >
+            <SubmitDistanceRating />
+
+          </Col>
+
+          <Col md={6} >
+            <DistanceTable />
+          </Col>
+
+          <Col md={6} >
+            {/* <SubmitDistanceRating /> */}
+          </Col>
+
+        </Grid>
       </div>
     );
   }
 }
-
-
 
 class App extends Component {
   render() {
@@ -54,33 +64,20 @@ class App extends Component {
 
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/secondPage">kevins page</Link></li>
           <li><Link to="/specific">About</Link></li>
+          <li><Link to="/secondPage">Search Cheese in your location</Link></li>
         </ul>
 
-
         <Route exact path="/" component={ConnectedHome}/>
-        <Route path="/secondPage/" component={KevinsPage}/>
-      <Route exact path="/specific" component={CheeseNameView}/>
-
+        <Route path="/secondPage/" component={CheeseDistance}/>
 
       </div>
       </Router>
     );
   }
 }
-const mapStateToProps = (state, ownProps) => {
-  return {
-
-  }
-}
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-
-  };
-}
-const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
 
 
+const ConnectedApp = connect(null, null)(App);
+// App --------------------------------------------------------------------------------
 export { ConnectedApp, ConnectedHome };
