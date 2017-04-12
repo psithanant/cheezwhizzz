@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import NavbarClass from './components/navBar/navBar'
+import RegisterForm from './components/registration_login/signUpForm'
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -19,6 +20,7 @@ import SubmitDistanceRating from './components/dropdown/SubmitButton.js'
 import ZipCode from './components/SearchZipCode/ZipCode.js'
 import ConnectedHome from './components/homepage/home'
 import { Grid, Col } from 'react-bootstrap';
+
 
 class CheeseDistance extends Component {
 
@@ -55,6 +57,21 @@ class CheeseDistance extends Component {
   }
 }
 
+
+
+class Register extends Component {
+  render() {
+    return (
+      <div className="register page">
+        <RegisterForm />
+
+      </div>
+    );
+  }
+}
+
+
+
 class App extends Component {
   render() {
     return (
@@ -64,20 +81,23 @@ class App extends Component {
 
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/specific">About</Link></li>
           <li><Link to="/secondPage">Search Cheese in your location</Link></li>
+
+          <li><Link to="/register">Register</Link></li>
+
         </ul>
 
-        <Route exact path="/" component={ConnectedHome}/>
-        <Route path="/secondPage/" component={CheeseDistance}/>
 
+        <Route exact path="/" component={ConnectedHome}/>
+      <Route path="/secondPage/" component={CheeseDistance}/>
+      <Route path="/register" component={Register}/>
       </div>
       </Router>
     );
   }
 }
 
-
 const ConnectedApp = connect(null, null)(App);
-// App --------------------------------------------------------------------------------
+
+
 export { ConnectedApp, ConnectedHome };
