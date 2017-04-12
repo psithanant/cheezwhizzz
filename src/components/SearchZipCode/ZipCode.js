@@ -28,16 +28,17 @@ const ZipCode = ({SearchZipCode}) => {
             </Navbar.Header>
             <Navbar.Collapse>
                 <Navbar.Form pullLeft>
+                  <div id='zipcode'>
                     <FormGroup>
                         <FormControl onChange={keyIn} type="text" placeholder="Put a zipcode here"/>
                     </FormGroup>
+                      </div>
                     {' '}
                     {/* <Button type="submit">Submit</Button> */}
                 </Navbar.Form>
             </Navbar.Collapse>
         </Navbar>
     )
-
 };
 
 export default connect(null, mapDispatchToProps)(ZipCode);
