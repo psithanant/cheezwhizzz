@@ -4,7 +4,7 @@ import Menu from './filterButtonGroup'
 import ResultTable from './resultTable'
 import { connect } from 'react-redux';
 
-const Home = ({seeAllCheeses, getRandomCheese, seeSubstitutes, results}) => (
+export const Home = ({seeAllCheeses, getRandomCheese, seeSubstitutes, results}) => (
   <div className="Home">
     <Grid>
       <Col md={6} >
@@ -48,6 +48,5 @@ const mapDispatchToPropsHome = (dispatch, ownProps) => {
     }
   }
 }
-
 const ConnectedHome = connect(mapStateToPropsHome, mapDispatchToPropsHome)(Home);
 export default ConnectedHome

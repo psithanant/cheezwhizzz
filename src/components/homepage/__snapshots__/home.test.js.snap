@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home snapshots 1`] = `
+<div
+  className="Home"
+>
+  <Grid
+    bsClass="container"
+    componentClass="div"
+    fluid={false}
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={6}
+    >
+      <Connect(Menu) />
+    </Col>
+    <Col
+      bsClass="col"
+      componentClass="div"
+      md={6}
+    >
+      <ResultTable
+        cheeses={
+          Array [
+            Object {
+              "animal": "cow",
+              "favorite": 0,
+              "firmness": "soft",
+              "id": 1,
+              "name": "brie",
+            },
+          ]
+        }
+      />
+    </Col>
+  </Grid>
+</div>
+`;

@@ -18,6 +18,7 @@ import RatingDropDown from './components/dropdown/YelpRating.js'
 import SubmitDistanceRating from './components/dropdown/SubmitButton.js'
 import ZipCode from './components/SearchZipCode/ZipCode.js'
 import ConnectedHome from './components/homepage/home'
+
 class KevinsPage extends Component {
 
 
@@ -82,5 +83,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
 
-
-export { ConnectedApp, ConnectedHome };
+export { ConnectedApp, ConnectedHome, App };
