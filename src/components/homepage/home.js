@@ -3,9 +3,12 @@ import { Grid, Col } from 'react-bootstrap';
 import Menu from './filterButtonGroup'
 import ResultTable from './resultTable'
 import { connect } from 'react-redux';
+import CarouselInstance from './carousal'
+import NavTable from '../navBar/navBarResultstable'
 
 export const Home = ({seeAllCheeses, getRandomCheese, seeSubstitutes, results}) => (
   <div className="Home">
+    <CarouselInstance />
     <Grid>
       <Col md={6} >
         <Menu seeAllCheeses={seeAllCheeses}
@@ -14,6 +17,7 @@ export const Home = ({seeAllCheeses, getRandomCheese, seeSubstitutes, results}) 
       </Col>
       <Col md={6} >
         <ResultTable cheeses={results} />
+      <NavTable />
       </Col>
     </Grid>
   </div>

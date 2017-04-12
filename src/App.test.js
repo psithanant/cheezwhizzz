@@ -14,4 +14,4 @@ it('renders without crashing', () => {
     );
     expect(toJson(component)).toMatchSnapshot();
   });
-});
+

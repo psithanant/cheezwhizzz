@@ -6,10 +6,9 @@ import { bindActionCreators} from 'redux'
 import { doSearch } from '../../actions'
 
 const mapStateToProps = (state, ownProps ) =>{
-  console.log('what is list', state);
     return {
-      list: state.distance_reducer
-      // page: state.search.page
+      list: state.distance_reducer,
+      distance: state.combineDistanceZipcode.distance
     }
 };
 
@@ -17,25 +16,19 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return bindActionCreators({doSearch}, dispatch)
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators({ }, dispatch)
-// }
+const _renderList = (list,distance) => {
 
-const _renderList = (list) => {
-  console.log('what is item,', list);
   return (
-
-  // {console.log('what is state', state)};
    list.map(item => (
       <tr key={item.id}>
         <td>
           {item.name}
         </td>
         <td>
-          {item.location.display_address[0]}
+          {item.location.display_address[0] + ', ' + item.location.display_address[1] }
         </td>
         <td>
-          {item.geo_accuracy}
+          {distance}
         </td>
         <td>
           {item.phone}
@@ -47,16 +40,14 @@ const _renderList = (list) => {
     ))
   );
 }
-
 class DistanceTable extends Component {
 
   render(){
-    console.log('what is lissttttt',this.props.list);
     return (
       <div>
-        <button onClick={(event)=>{ doSearch(94588, 3) }}
-          type ="button"> Click here </button>
-      <table className="table-striped table-bordered">
+        {/* <button onClick={(event)=>{ this.props.doSearch(94588, 3) }}
+          type ="button"> Click here </button> */}
+      <table id='DistanceTable'className="table-striped table-bordered table">
         <thead>
           <tr>
             <th> Name </th>
@@ -67,8 +58,7 @@ class DistanceTable extends Component {
           </tr>
         </thead>
         <tbody>
-          {console.log("what is renderlist?",_renderList(this.props.list))}
-          {_renderList(this.props.list)}
+          {_renderList(this.props.list, this.props.distance)}
         </tbody>
       </table>
     </div>
@@ -76,4 +66,4 @@ class DistanceTable extends Component {
   }
 };
 
-export default connect(mapStateToProps)(DistanceTable);
+export default connect(mapStateToProps, mapDispatchToProps)(DistanceTable);
