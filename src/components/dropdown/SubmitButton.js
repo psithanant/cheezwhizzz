@@ -4,6 +4,9 @@ import photo from '../../assets/thumbnaildiv.png'
 import {doSearch} from '../../actions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
+// import { render } from 'react-dom';
+// import Rotation from 'react-rotation';
+
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return bindActionCreators({

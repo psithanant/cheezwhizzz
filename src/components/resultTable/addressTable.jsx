@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 const _renderList = (list) => {
-  
+
   return (
    list.map(item => (
       <tr key={item.id}>
@@ -47,7 +47,7 @@ class DistanceTable extends Component {
       <div>
         {/* <button onClick={(event)=>{ this.props.doSearch(94588, 3) }}
           type ="button"> Click here </button> */}
-      <table className="table-striped table-bordered table">
+      <table id='DistanceTable'className="table-striped table-bordered table">
         <thead>
           <tr>
             <th> Name </th>
