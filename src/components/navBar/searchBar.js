@@ -3,6 +3,7 @@ import { Navbar, FormGroup, FormControl, Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { setNavQuery, setCheeseResult } from '../../actions'
+import { Link } from 'react-router-dom'
 
 
 
@@ -28,11 +29,14 @@ class SearchBar extends Component {
           // value={}
           onChange={(event) => {
         this.props.setNavQuery(event.target.value);
-      }}
-           />
+      }}/>
+    {/* <li>
+      <Link to="/specificheeese"> */}
          <Button onClick={(event) => {
            event.preventDefault();
            this.props.setCheeseResult(this.props.value)}} >Submit</Button>
+     {/* </Link>
+     </li> */}
         </FormGroup>
       </Navbar.Form>
   )
