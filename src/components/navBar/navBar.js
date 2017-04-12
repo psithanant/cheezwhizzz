@@ -11,7 +11,7 @@ const style = {background: "linear-gradient(to bottom, #fff200 0%,#ffc802 80%,#f
 class NavbarClass extends Component {
   render() {
     return  (
-      <Navbar style={style} inverse collapseOnSelect>
+      <Navbar className="nav-bar" style={style} inverse collapseOnSelect>
         <NavbarHeader />
         <SearchBar />
         <Navbar.Collapse>

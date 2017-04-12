@@ -29,7 +29,7 @@ class KevinsPage extends Component {
        {/* <Search> Search</Search> */}
       {/* <button onClick={(event)=>{ doSearch(94588, 3) }}
         type="button"> Click here </button> */}
-
+  <NavTable />
       </div>
 
 
