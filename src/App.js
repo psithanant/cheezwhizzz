@@ -7,10 +7,8 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-
 import ResultTable from './components/homepage/resultTable'
 import NavTable from './components/navBar/navBarResultstable'
-
 import { connect } from 'react-redux';
 import doSearch from './actions/index.js'
 import DistanceTable from './components/resultTable/addressTable.jsx'
@@ -20,7 +18,6 @@ import SubmitDistanceRating from './components/dropdown/SubmitButton.js'
 import ZipCode from './components/SearchZipCode/ZipCode.js'
 import ConnectedHome from './components/homepage/home'
 import { Grid, Col } from 'react-bootstrap';
-
 
 class CheeseDistance extends Component {
 
@@ -107,5 +104,4 @@ class App extends Component {
 
 const ConnectedApp = connect(null, null)(App);
 
-
-export { ConnectedApp, ConnectedHome };
+export { ConnectedApp, ConnectedHome, App };

@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import CarouselInstance from './carousal'
 import NavTable from '../navBar/navBarResultstable'
 
-const Home = ({seeAllCheeses, getRandomCheese, seeSubstitutes, results}) => (
+export const Home = ({seeAllCheeses, getRandomCheese, seeSubstitutes, results}) => (
   <div className="Home">
     <CarouselInstance />
     <Grid>
@@ -44,11 +44,6 @@ const mapDispatchToPropsHome = (dispatch, ownProps) => {
                            .then(function(res) { return res.json(); })
               })
     },
-    onSearchChange: (event) => {
-      dispatch({type: 'CHANGE_QUERY',
-                newQuery: event.target.value
-              })
-    },
     seeSubstitutes: () => {
       dispatch({type: 'SEE_SUBSTITUTES',
                 payload: fetch('http://cheeswhiz.herokuapp.com/api/cheese/substitute/Brie')
@@ -57,6 +52,5 @@ const mapDispatchToPropsHome = (dispatch, ownProps) => {
     }
   }
 }
-
 const ConnectedHome = connect(mapStateToPropsHome, mapDispatchToPropsHome)(Home);
 export default ConnectedHome
