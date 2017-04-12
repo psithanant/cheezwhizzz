@@ -70,22 +70,20 @@ class Register extends Component {
   }
 }
 
-
-
 class App extends Component {
   render() {
     return (
       <Router>
       <div className="page">
-      <NavbarClass />
-
+      <NavbarClass>
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/secondPage">Search Cheese in your location</Link></li>
-
           <li><Link to="/register">Register</Link></li>
-
         </ul>
+
+      </NavbarClass>
+
 
 
         <Route exact path="/" component={ConnectedHome}/>
