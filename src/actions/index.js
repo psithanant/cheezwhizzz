@@ -1,50 +1,37 @@
-//put action creators here.
-//and example might be:
-import axios from 'axios';
-// import * as CONST from '../constants';
 
-function fetchSearchTopStories() {
-console.log('i am in fetch function');
-    return axios.get("http://cheeswhiz.herokuapp.com/api/findcheese/94588/3")
+import axios from 'axios';
+export const searchDistance = (event) =>{
+  console.log('did i ever run this searchDistance action');
+  return {
+    type: "STORE_DISTANCE",
+    text: event
+  }
+}
+
+export const SearchZipCode = (number) =>{
+  console.log('what is TYPING,',number);
+  return {
+    type: "STORE_ZIPCODE",
+    zipcode: number
+  }
+}
+
+function fetchSearchTopStories(zipCode, range) {
+console.log('what is ');
+    return axios.get(`http://cheeswhiz.herokuapp.com/api/findcheese/${zipCode}/${range}`)
     .then(response => {
         console.log(  "what is response now", response.data );
         return response.data
     })
-    //
-    // return fetch("http://cheeswhiz.herokuapp.com/api/findcheese/94588/3")
-    // .then(response => response.json())
-    // .then(result => console.log(result) )
-    // .catch(err => console.log('oh nooo!'))
 };
 
-export const doSearch = (text, page) => {
+export const doSearch = (zipCode, range) => {
     // console.log('can prop get here', this.props);
     return {
         type: 'DO_SEARCH',
-        payload: fetchSearchTopStories()
+        payload: fetchSearchTopStories(zipCode, range)
     }
 }
-
-//dispatching the DO_SEARCH action, will result in the following actions being
-//dispatched from the redux promise middleware
-//
-// {
-//   type: 'DO_SEARCH_PENDING'
-// }
-//
-// {
-//   type: 'DO_SEARCH_FULLFILLED',
-//   payload: //promise resolution
-// }
-//
-// {
-//   type: 'DO_SEARCH_REJECTED'
-//   payload: //promoise rejection
-// }
-
-// module.export = {
-//   setQuery: setQuery,
-//   doSearch: doSearch
 
 export const setNavQuery = (text) => {
   return {
@@ -67,14 +54,7 @@ function fetchCheeseByName(cheeseName) {
   .then(result => console.log(result) )
   .catch(err => console.log('oh nooo!'))
 }
-//
-// export const doSearch = (text, page) => {
-//   return {
-//     type: "DO_SEARCH",
-//     payload:
-//   }
 
-// }
 
 export const setSubstituteQuery = (text) => {
   return {

@@ -13,16 +13,15 @@ import DistanceDropDown from './components/dropdown/Distance.js'
 import RatingDropDown from './components/dropdown/YelpRating.js'
 import SubmitDistanceRating from './components/dropdown/SubmitButton.js'
 import ZipCode from './components/SearchZipCode/ZipCode.js'
-class KevinsPage extends Component {
 import ConnectedHome from './components/homepage/home'
+import { Grid, Col } from 'react-bootstrap';
 
-class FindStore extends Component {
+
+
+class KevinsPage extends Component {
   render() {
     return (
       <div className="KevinsPage">
-       {/* <Search> Search</Search> */}
-      {/* <button onClick={(event)=>{ doSearch(94588, 3) }}
-        type="button"> Click here </button> */}
         <Grid>
 
           <Col md={6} >
@@ -34,7 +33,8 @@ class FindStore extends Component {
           </Col>
 
           <Col md={6} >
-            <RatingDropDown />
+            <SubmitDistanceRating />
+
           </Col>
 
           <Col md={6} >
@@ -42,11 +42,10 @@ class FindStore extends Component {
           </Col>
 
           <Col md={6} >
-            <SubmitDistanceRating />
+            {/* <SubmitDistanceRating /> */}
           </Col>
 
         </Grid>
-
       </div>
     );
   }
@@ -61,7 +60,7 @@ class App extends Component {
       <NavbarClass />
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/secondPage">kevins page</Link></li>
+          <li><Link to="/secondPage">Search Cheese in your location</Link></li>
         </ul>
 
         <Route exact path="/" component={ConnectedHome}/>
@@ -71,18 +70,8 @@ class App extends Component {
     );
   }
 }
-const mapStateToProps = (state, ownProps) => {
-  return {
 
-  }
-}
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-
-  };
-}
-const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
+const ConnectedApp = connect(null, null)(App);
 // App -------------------------------------------------------------------------------------------------
 
 export { ConnectedApp, ConnectedHome };
