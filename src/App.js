@@ -70,7 +70,6 @@ class App extends Component {
 
         <Route exact path="/" component={ConnectedHome}/>
         <Route path="/secondPage/" component={CheeseDistance}/>
-      <Route exact path="/specific" component={CheeseNameView}/>
 
       </div>
       </Router>
