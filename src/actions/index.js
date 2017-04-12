@@ -63,11 +63,7 @@ export const setCheeseResult = (cheeseName) => {
 }
 
 function fetchCheeseByName(cheeseName) {
-  // console.log('i am here');
-  // fetch(`http://cheeswhiz.herokuapp.com/api/cheese/specific/${cheeseName}`)
-  //   .then(function(res) { return res.json(); })
-  // .then(result => {console.log('this is res', result)} )
-  // .catch(err => console.log('oh nooo!'))
+
   return axios.get(`http://cheeswhiz.herokuapp.com/api/cheese/specific/${cheeseName}`)
 }
 //
@@ -78,6 +74,19 @@ function fetchCheeseByName(cheeseName) {
 //   }
 
 // }
+
+export const registerUser = (data) => {
+  return {
+    type: 'SIGN_UP',
+    payload: fetchCheeseRegisterApi(data)
+  }
+}
+
+function fetchCheeseRegisterApi(data) {
+  return axios.post(`http://cheeswhiz.herokuapp.com/api/user/register`, data)
+    .then(result => console.log('this is res', result))
+}
+
 
 export const setSubstituteQuery = (text) => {
   return {

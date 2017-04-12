@@ -6,6 +6,7 @@ import navQuery from './reducer_navSearchQuery'
 import navResult from './reducer_navSearchResults'
 import substituteQuery from './substituteQueryReducer'
 import {reducer as formReducer } from 'redux-form'
+import signUp from './reducer_registered'
 
 const rootReducer = combineReducers({
   distance_reducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   navQuery,
   navResult,
   substituteQuery,
+  signUp,
   form: formReducer
 
 })
