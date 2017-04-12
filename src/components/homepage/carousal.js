@@ -9,20 +9,20 @@ const CarouselInstance = () => {
   return (
   <Carousel>
     <Carousel.Item>
-      <img width={1000} height={400} src={HeroPhotoLeft}/>
+      <img width={1000} height={100} src={HeroPhotoLeft}/>
       <Carousel.Caption>
         <h1>DId Someone Say Cheese?</h1>
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
-      <img width={1000} height={400} src={HeroPhotoCenter}/>
+      <img width={1000} height={100} src={HeroPhotoCenter}/>
       <Carousel.Caption>
         <h2>Queso?</h2>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
-      <img width={1000} height={400} src={HeroPhotoRight}/>
+      <img width={1000} height={100} src={HeroPhotoRight}/>
       <Carousel.Caption>
         <h2>Fromage?</h2>
       </Carousel.Caption>
