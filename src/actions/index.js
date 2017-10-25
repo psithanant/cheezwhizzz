@@ -1,27 +1,18 @@
 import axios from 'axios';
 export const searchDistance = (event) =>{
-  console.log('did i ever run this searchDistance action');
   return {
     type: "STORE_DISTANCE",
     text: event
   }
 }
 
-export const SearchZipCode = (number) =>{
-  console.log('what is TYPING,',number);
-  return {
-    type: "STORE_ZIPCODE",
-    zipcode: number
-  }
-}
+export const SearchZipCode = (number) => ({ type: "STORE_ZIPCODE", zipcode: number });
 
-function fetchSearchTopStories(zipCode, range) {
-console.log('what is ');
-    return axios.get(`http://cheeswhiz.herokuapp.com/api/findcheese/${zipCode}/${range}`)
-    .then(response => {
-        console.log(  "what is response now", response.data );
-        return response.data
-    })
+
+async function fetchSearchTopStories(zipCode, range) {
+    let response = await axios.get(`http://cheeswhiz.herokuapp.com/api/findcheese/${zipCode}/${range}`);
+    let data = await response.json();
+    return data;
 };
 
 export const doSearch = (zipCode, range) => {

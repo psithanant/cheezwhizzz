@@ -12,6 +12,8 @@ describe('Search', () => {
     ReactDOM.render(<Search>Search</Search>, div);
   });
 
+
+{/* <DistanceTable className></DistanceTable> */}
   test('snapshots', () => {
     const component = shallow(
       <Search>Search</Search>

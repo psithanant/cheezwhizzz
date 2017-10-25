@@ -24,7 +24,6 @@ class CheeseDistance extends Component {
   render() {
     return (
       <div className="CheeseName">
-
         <Grid>
 
           <Col md={6} >
