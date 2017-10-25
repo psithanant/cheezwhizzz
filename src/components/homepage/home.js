@@ -5,7 +5,7 @@ import ResultTable from './resultTable'
 import { connect } from 'react-redux';
 import CarouselInstance from './carousal'
 
-const Home = ({seeAllCheeses, getRandomCheese, seeSubstitutes, results}) => (
+export const Home = ({seeAllCheeses, getRandomCheese, seeSubstitutes, results}) => (
   <div className="Home">
     <CarouselInstance />
     <Grid>
@@ -50,6 +50,5 @@ const mapDispatchToPropsHome = (dispatch, ownProps) => {
     }
   }
 }
-
 const ConnectedHome = connect(mapStateToPropsHome, mapDispatchToPropsHome)(Home);
 export default ConnectedHome
